@@ -5,7 +5,7 @@
 FROM --platform=$TARGETOS/$TARGETARCH mhart/alpine-node:14
 WORKDIR /app
 COPY . ./
-RUN yarn install --frozen-lockfile \
+RUN yarn install --frozen-lockfile --ignore-engines \
     && yarn run build:production
 
 # Stage 1:
